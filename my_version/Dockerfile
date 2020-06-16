@@ -1,0 +1,5 @@
+FROM scratch
+ADD my_version /
+ENV UPPER_LIMIT 1919810
+EXPOSE 5565
+ENTRYPOINT ["/my_version"]

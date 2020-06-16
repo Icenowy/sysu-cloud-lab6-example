@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myver
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: myver
+  template:
+    metadata:
+      labels:
+        app: myver
+    spec:
+      containers:
+        - name: back-end
+          image: my_version
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5565
